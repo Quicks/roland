@@ -1,0 +1,41 @@
+
+
+
+%h1 Список продуктів
+= link_to 'Створити продукт', new_admin_product_path, class: 'btn btn-primary'
+.table-responsive
+  %table.table.table-hover.text-center.custom-table
+    %thead
+      %tr
+        %th Age
+        %th Appointment
+        %th Application time
+        %th Classification
+        %th Made in
+        %th Volume
+        %th Desc
+        %th Title
+        %th Sex
+        %th
+        %th
+        %th
+
+    %tbody
+      - @admin_products.each do |admin_product|
+        %tr
+          %td= admin_product.age
+          %td= admin_product.appointment
+          %td= admin_product.application_time
+          %td= admin_product.classification
+          %td= admin_product.made_in
+          %td= admin_product.volume
+          %td= admin_product.desc
+          %td= admin_product.title
+          %td= admin_product.sex
+          %td= link_to 'Show', admin_product
+          %td= link_to 'Edit', edit_admin_product_path(admin_product)
+          %td= link_to 'Destroy', admin_product, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+

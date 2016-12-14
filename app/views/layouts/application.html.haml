@@ -1,0 +1,100 @@
+:scss
+  .custom-table{
+    thead{
+      tr{
+        th{
+          text-align: center;
+        }
+      }
+    }
+
+    .actions{
+      width: 150px;
+    //td{
+      a{
+        text-align: left;
+        margin: 0 15px 0 5px;
+        &:nth-child(1){
+            color: green;
+        }
+        &:nth-child(2){
+            color: #bbc055;
+        }
+        &:nth-child(3){
+            color: red;
+        }
+        &:hover{
+          color: grey;
+          background: none;
+        }
+
+      }
+    //}
+
+    }
+
+  }
+
+  .custom-table{
+    thead{
+      tr{
+        th{
+          text-align: center;
+        }
+      }
+    }
+    .news{
+      height: auto;
+      .test{
+        max-height: 140px;
+        overflow: hidden;
+      }
+    }
+    .actions{
+      width: 150px;
+      a{
+        text-align: left;
+        margin: 0 15px 0 5px;
+        &:nth-child(1){
+            color: green;
+        }
+        &:nth-child(2){
+            color: #EAED2A;
+        }
+        &:nth-child(3){
+            color: red;
+        }
+        &:hover{
+          color: grey;
+          background: none;
+        }
+
+      }
+    }
+
+  }
+
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title Roland
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    -# bootstrap cdn
+    / Latest compiled and minified CSS
+    %link{:crossorigin => "anonymous",
+          :href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css",
+          :integrity => "sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u",
+          :rel => "stylesheet"}/
+    / Latest compiled and minified JavaScript
+    %script{:crossorigin => "anonymous",
+            :integrity => "sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa",
+            :src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"}
+    = csrf_meta_tags
+
+  %body
+    =render partial: 'layouts/header'
+    .container
+
+      = yield

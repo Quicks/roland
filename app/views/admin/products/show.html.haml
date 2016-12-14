@@ -1,0 +1,33 @@
+%p#notice= notice
+
+%p
+  %b Age:
+  = @admin_product.age
+%p
+  %b Appointment:
+  = @admin_product.appointment
+%p
+  %b Application time:
+  = @admin_product.application_time
+%p
+  %b Classification:
+  = @admin_product.classification
+%p
+  %b Made in:
+  = @admin_product.made_in
+%p
+  %b Volume:
+  = @admin_product.volume
+%p
+  %b Desc:
+  = @admin_product.desc
+%p
+  %b Title:
+  = @admin_product.title
+%p
+  %b Sex:
+  = @admin_product.sex
+
+= link_to 'Edit', edit_admin_product_path(@admin_product)
+\|
+= link_to 'Back', admin_products_path

@@ -1,0 +1,2 @@
+json.extract! admin_product, :id, :age, :appointment, :application_time, :classification, :made_in, :volume, :desc, :title, :sex, :created_at, :updated_at
+json.url admin_product_url(admin_product, format: :json)

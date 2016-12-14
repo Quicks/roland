@@ -1,0 +1,14 @@
+= simple_form_for @admin_product do |f|
+
+  = f.input :age, label: 'Вік'
+  = f.input :appointment, label: 'Призначення'
+  = f.input :application_time, label: 'Час використання'
+  = f.input :classification, label: 'Класифікація'
+  = f.input :made_in, label: 'Вироблено в'
+  = f.input :volume, label: "Об'єм"
+  = f.input :desc, label: 'Опис'
+  = f.input :title, label: 'Назва'
+
+  = f.input :sex, label: 'Стать'
+  .actions
+    = f.submit 'Зберегти', class: 'btn btn-success'
