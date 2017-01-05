@@ -1,0 +1,13 @@
+:scss
+  .sidebar{
+    background-color: red;
+    //min-height: 100%;
+    //position: fixed;
+    margin: 0;
+  }
+.sidebar.col-xs-3
+
+.products-content.col-xs-9
+  -@products.each do |product|
+    = render partial: 'product_card', locals: {product: product}
+

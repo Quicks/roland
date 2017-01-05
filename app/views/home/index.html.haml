@@ -1,12 +1,10 @@
 :scss
-  .sidebar{
-    background-color: red;
-    min-height: 100%;
-    //position: fixed;
-    margin: 0;
-  }
-.row
-  .col-sm-12.products-wrapper
-    -@products.each do |product|
-      = render partial: 'product_card', locals: {product: product}
-    =paginate @products
+
+= render partial: 'home/slider'
+= render partial: 'home/about_us'
+= render partial: 'home/products'
+-#.row
+-#  .col-sm-12.products-wrapper
+-#    -@products.each do |product|
+-#      = render partial: 'product_card', locals: {product: product}
+-#    =paginate @products
