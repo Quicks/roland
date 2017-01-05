@@ -1,0 +1,71 @@
+:scss
+  .product-wrapper{
+    margin-bottom: 20px;
+    .product-card{
+      padding: 0 20px;
+      height: 350px;
+      border: 1px solid red;
+      overflow: hidden;
+      .product-img{
+        img{
+          width: 100%;
+          height: 220px;
+        }
+      }
+      .product-title{
+        font-weight: 500;
+        text-transform: uppercase;
+        margin: 0 0 1px;
+        letter-spacing: 0.6px;
+        padding: 0 32px;
+        line-height: 1.5;
+        color: #333;
+      }
+      .product-appointment{
+        color: #999999;
+        line-height: 1.3;
+        padding: 0 32px;
+      }
+      .product-price{
+        margin-top: 15px;
+      }
+      .product-volume{
+        padding: 7px;
+        margin: 0 auto;
+        width: 60px;
+        //border: 2px solid blue;
+        margin-top: 60px;
+        opacity: 0;
+        transition: all .5s ease;
+        border: 2px solid #792c9b;
+        color: #792c9b;
+      }
+      &:hover{
+        //z-index: 1;
+        //position: absolute;
+        //height: 450px;
+        -webkit-box-shadow: 0px 0px 17px 1px rgba(199,179,199,0.68);
+        -moz-box-shadow: 0px 0px 17px 1px rgba(199,179,199,0.68);
+        box-shadow: 0px 0px 17px 1px rgba(199,179,199,0.68);
+        .product-volume{
+          margin-top: 0;
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+.col-sm-6.col-md-3
+  .product-wrapper
+    .product-card.text-center
+      .product-img.img-responsive
+        = image_tag product.img
+      .product-title
+        = product.title
+      .product-appointment
+        = product.appointment
+      .product-price
+        = "#{product.price} грн"
+      .product-volume
+        = "#{product.volume} L"
+

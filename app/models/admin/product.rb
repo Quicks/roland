@@ -9,4 +9,9 @@ class Admin::Product
   field :desc, type: String
   field :title, type: String
   field :sex, type: String
+  field :price, type: String
+
+  mount_uploader :img, ProductUploader
+  validates :title, :desc, presence: true
+  validates_presence_of :img
 end

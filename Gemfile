@@ -27,7 +27,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 gem 'carrierwave-mongoid', :require => 'carrierwave/mongoid'
 gem "mini_magick"
-
+# https://github.com/amatsuda/kaminari
+gem 'kaminari'
 # https://github.com/plataformatec/devise
 gem 'devise'
 # https://github.com/martinrehfeld/role_model
