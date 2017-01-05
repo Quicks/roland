@@ -11,6 +11,8 @@ class Admin::Product
   field :sex, type: String
   field :price, type: String
 
+  belongs_to :admin_category, :class_name => 'Admin::Category'
+
   mount_uploader :img, ProductUploader
   validates :title, :desc, presence: true
   validates_presence_of :img

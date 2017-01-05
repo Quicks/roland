@@ -5,12 +5,18 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Admin::Category.destroy_all
 Admin::Product.destroy_all
+categories_titles = %w(Фарби Шампуні Кондиціонери Лаки)
+(0..4).each do |index|
+  Admin::Category.create(title: categories_titles[index])
+end
 (0..100).each do |index|
   img = File.open(Rails.root.join("app/assets/images/def_img.png"))
   # file = File.open(Rails.root)
   length = 12
-  Admin::Product.create!(age: rand(10..20),
+  offset = rand(Admin::Category.all.size - 1)
+  Admin::Product.create!(age: rand(20..30),
                         appointment: rand(36**length).to_s(36),
                         application_time: '',
                         classification: rand(36**length).to_s(36),
@@ -20,6 +26,7 @@ Admin::Product.destroy_all
                         title: rand(36**length).to_s(36),
                         sex: 'male',
                         img: img,
-                        price: rand(1000)
+                        price: rand(1000),
+                        admin_category: Admin::Category.offset(offset).first
   )
 end

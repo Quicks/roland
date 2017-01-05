@@ -1,0 +1,2 @@
+$('.products-content').html('<%= escape_javascript(render partial: 'products/by_categories',
+                                                                    locals: {products: @products})%>')

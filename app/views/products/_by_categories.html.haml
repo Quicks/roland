@@ -1,0 +1,3 @@
+-products.each do |product|
+  = link_to '#' do
+    = render partial: 'products/product_card', locals: {product: product}

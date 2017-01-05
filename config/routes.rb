@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  get 'products/by_category/:cat_id' => 'products#by_category', as: 'products_by_category'
+
+  get 'products/show'
+
+  namespace :admin do
+    resources :categories
+  end
   namespace :admin do
     resources :products
   end

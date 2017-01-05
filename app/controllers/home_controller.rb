@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @products = Admin::Product.all.page(params[:page]).per(12)
+    @products_group_by_categories = Admin::Product.all.group_by{|product| product.admin_category}
   end
 end
