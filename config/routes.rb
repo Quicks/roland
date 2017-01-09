@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   get 'products/show'
 
+  get 'admin' => 'admin/admin#index'
   namespace :admin do
     resources :categories
   end

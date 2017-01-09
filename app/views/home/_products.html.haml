@@ -1,4 +1,10 @@
+= stylesheet_link_tag '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css'
+= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick-theme.min.css'
+= javascript_include_tag '//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js'
 :scss
+  .row.products-wrapper{
+    margin: 0;
+  }
   .sidebar{
     background-color: whitesmoke;
     height: 350px;
@@ -19,18 +25,45 @@
 
     }
   }
+  .products-content{
+    .slick-slide{
+      &:hover{
+        background-color: transparent;
+      }
+    }
+    height: 350px;
+    .slick-arrow{
+      &::before{
+        color: red;
+      }
+    }
+    .slick-prev{
+      left: 0;
 
-.sidebar.col-xs-3
-  %ul
-    -@products_group_by_categories.each do |category, products|
-      = link_to products_by_category_path(category), remote: true do
-        %li= category.title
+    }
+    .slick-next{
+      right: 0;
+    }
+  }
+.row.products-wrapper
+  .sidebar.col-xs-3
+    %ul
+      -@products_group_by_categories.each do |category, products|
+        = link_to products_by_category_path(category), remote: true do
+          %li= category.title
 
 
-.products-content.col-xs-9
-  -#- binding.pry
-  =render partial: 'products/by_categories', locals: {products: @products_group_by_categories.first.second}
-  -#-@products_group_by_categories.first.second.each do |product|
-  -#  = link_to '#' do
-  -#    = render partial: 'product_card', locals: {product: product}
-
+  .products-content.col-xs-9
+    =render partial: 'products/by_categories', locals: {products: @products_group_by_categories.first.second}
+:javascript
+  function initSlider(container) {
+    $(container).slick({
+      infinite: true,
+      slidesToShow: 3,
+      slidesToScroll: 3,
+      // dots: true,
+    });
+  }
+  $(document).ready(function(){
+    initSlider('.products-content');
+  });
