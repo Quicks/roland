@@ -9,6 +9,7 @@
   = f.input :classification, label: 'Класифікація'
   = f.input :made_in, label: 'Вироблено в'
   = f.input :volume, label: "Об'єм"
+  = f.input :admin_category, collection: Admin::Category.all.map{|cat| [cat.title, cat.id.to_s]}
   = f.input :desc, label: 'Опис'
 
 

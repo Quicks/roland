@@ -1,3 +1,8 @@
+:scss
+  .desc{
+    width: 150px;
+    overflow: hidden;
+  }
 %h1 Список продуктів
 = link_to 'Створити продукт', new_admin_product_path, class: 'btn btn-primary'
 .table-responsive
@@ -28,18 +33,19 @@
           %td= admin_product.classification
           %td= admin_product.made_in
           %td= admin_product.volume
-          %td= admin_product.desc
+          %td.desc= admin_product.desc[0..30]
           %td= admin_product.sex
           %td= image_tag(admin_product.img.thumb)
-          %td
-            = link_to admin_product do
-              %i.fa.fa-eye.fa-2x{"aria-hidden" => "true"}
-          %td
-            = link_to edit_admin_product_path(admin_product) do
-              %i.fa.fa-pencil.fa-2x{"aria-hidden" => "true"}
-          %td
-            = link_to admin_product, :method => :delete, :data => { :confirm => 'Are you sure?' } do
-              %i.fa.fa-trash.fa-2x{"aria-hidden" => "true"}
+          .actions
+            %td
+              = link_to admin_product do
+                %i.fa.fa-eye.fa-2x{"aria-hidden" => "true"}
+            %td
+              = link_to edit_admin_product_path(admin_product) do
+                %i.fa.fa-pencil.fa-2x{"aria-hidden" => "true"}
+            %td
+              = link_to admin_product, :method => :delete, :data => { :confirm => 'Are you sure?' } do
+                %i.fa.fa-trash.fa-2x{"aria-hidden" => "true"}
 
 
 %br
